@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_test_app/constants/app_color_constants.dart';
 
 class RealestateModel {
   final String heading;
@@ -58,9 +59,9 @@ class HomePagePopularInRealestate extends StatelessWidget {
           Text(
             'Popular in Real Estate',
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 16,
               fontWeight: FontWeight.w600,
-              color: const Color.fromARGB(255, 46, 81, 100),
+              color: AppColors.textDark,
             ),
           ),
           SizedBox(height: 10),
@@ -80,7 +81,7 @@ class HomePagePopularInRealestate extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 18,
-                      color: const Color.fromARGB(255, 188, 49, 39),
+                      color: AppColors.headings,
                     ),
                   ),
 

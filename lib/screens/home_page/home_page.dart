@@ -44,7 +44,6 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               HomeLocationDetails(),
-              SizedBox(height: 10),
               HomePageCarousel(),
               HomePagePopularCategories(),
               HomePageHorizontalList(title: 'Popular in Fasion', length: 20),

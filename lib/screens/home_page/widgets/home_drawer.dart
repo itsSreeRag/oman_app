@@ -1,68 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
+import 'package:ui_test_app/utils/models/home_drawer_model.dart';
 
 class HomePageDrawer extends StatelessWidget {
   const HomePageDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Main items + sub-items
-    List<HomeDrawerModel> items = [
-      HomeDrawerModel(
-        title: 'Motors',
-        icons: Icons.directions_car,
-        subItems: [
-          'Cars for Sale',
-          'Motorcycles & Accessories',
-          'Vehicles for Rent',
-          'Heavy Vehicles',
-          'Boats & Jet Skis',
-          'Plate Numbers',
-          'Tires, Wheels & Rims',
-          'Auto Accessories & Parts',
-          'Junk Cars - Other Vehicles',
-          'Car Maintenance and Repair',
-          'Vehicle Check',
-          'Calculator',
-          'Driving Training',
-        ],
-      ),
-      HomeDrawerModel(
-        title: 'Real Estate',
-        icons: Icons.home_work_outlined,
-        subItems: ['Rent', 'Sell', 'Land'],
-      ),
-      HomeDrawerModel(
-        title: 'Electronics',
-        icons: Icons.devices_other,
-        subItems: ['Mobiles', 'Laptops', 'Cameras'],
-      ),
-      HomeDrawerModel(
-        title: 'Home & Garden',
-        icons: Icons.chair_alt,
-        subItems: ['Furniture', 'Plants', 'Decor'],
-      ),
-      HomeDrawerModel(
-        title: 'Fashion',
-        icons: Icons.checkroom,
-        subItems: ['Men', 'Women', 'Kids'],
-      ),
-      HomeDrawerModel(
-        title: 'Sports',
-        icons: Icons.sports_soccer,
-        subItems: ['Football', 'Cricket', 'Gym'],
-      ),
-      HomeDrawerModel(
-        title: 'Jobs',
-        icons: Icons.work_outline,
-        subItems: ['Full-Time', 'Part-Time', 'Internship'],
-      ),
-      HomeDrawerModel(
-        title: 'Services',
-        icons: Icons.miscellaneous_services,
-        subItems: ['Repair', 'Cleaning', 'Transport'],
-      ),
-    ];
+    final items = homeDrawerItems;
 
     return Drawer(
       backgroundColor: AppColors.background,
@@ -116,16 +61,4 @@ class HomePageDrawer extends StatelessWidget {
       ),
     );
   }
-}
-
-class HomeDrawerModel {
-  final String title;
-  final IconData icons;
-  final List<String> subItems;
-
-  HomeDrawerModel({
-    required this.title,
-    required this.icons,
-    required this.subItems,
-  });
 }

@@ -8,7 +8,7 @@ class HomePageCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        height: 250.0,
+        height: 200.0,
         autoPlay: true,
         autoPlayAnimationDuration: Duration(seconds: 3),
       ),
