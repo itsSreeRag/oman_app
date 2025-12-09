@@ -8,13 +8,11 @@ class AboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'About Us',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-        ),
+        backgroundColor: Colors.deepOrangeAccent,
+        title: Text('About Us', style: TextStyle(color: Colors.white)),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: Icon(Icons.arrow_back_ios),
+          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
         ),
         centerTitle: true,
       ),
