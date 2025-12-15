@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
+import 'package:ui_test_app/utils/models/product_card_model.dart';
 import 'package:ui_test_app/widgets/product_card.dart';
 
 class HomePageHorizontalList extends StatelessWidget {
   final String title;
-  final int length;
+  final List<ProductCardModel> products;
 
   const HomePageHorizontalList({
     super.key,
     required this.title,
-    required this.length,
+    required this.products,
   });
 
   @override
@@ -60,19 +61,15 @@ class HomePageHorizontalList extends StatelessWidget {
         ),
         // Horizontal scrolling product list
         SizedBox(
-          height: 272,
+          height: 202,
           child: ListView.builder(
-            itemCount: length,
+            itemCount: products.length,
             scrollDirection: Axis.horizontal,
             physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.symmetric(horizontal: 4),
             itemBuilder: (context, index) {
-              return ProductCard(
-                name: "Samsung Galaxy S23",
-                price: "59999",
-                imageUrl: "assets/pexels-asphotograpy-230544.jpg",
-                location: "1900, Sidab (Muscat, Muscat)",
-              );
+              final product = products[index];
+              return ProductCard(product: product);
             },
           ),
         ),

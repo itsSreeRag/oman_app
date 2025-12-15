@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
-import 'package:ui_test_app/screens/home_page/widgets/categories_card.dart';
+import 'package:ui_test_app/widgets/categories_card.dart';
 import 'package:ui_test_app/utils/models/popular_categories_model.dart';
 
 class HomePagePopularCategories extends StatelessWidget {
@@ -19,12 +19,13 @@ class HomePagePopularCategories extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Text(
-                'Popular Categories',
+                'Top Categories for You',
                 style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.secondary,
-                  letterSpacing: 0.5,
+                  fontSize: 15,
+                  leadingDistribution: TextLeadingDistribution.even,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.textDark,
+                  letterSpacing: 0,
                 ),
               ),
             ),
@@ -51,21 +52,19 @@ class HomePagePopularCategories extends StatelessWidget {
             ),
           ],
         ),
-        GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            childAspectRatio: 0.85,
+        SizedBox(
+          height: 75,
+          child: ListView.builder(padding: EdgeInsets.all(0),
+            scrollDirection: Axis.horizontal,
+            itemCount: gridItems.length,
+            itemBuilder: (context, index) {
+              final GridModel item = gridItems[index];
+              return CategoriesCard(
+                imagePath: item.imagePath,
+                name: item.title,
+              );
+            },
           ),
-          padding: EdgeInsets.all(0),
-          shrinkWrap: true,
-          physics: NeverScrollableScrollPhysics(),
-          itemCount: gridItems.length,
-          itemBuilder: (context, index) {
-            final GridModel item = gridItems[index];
-            return CategoriesCard(item: item);
-          },
         ),
       ],
     );

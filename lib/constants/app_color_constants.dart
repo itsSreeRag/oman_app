@@ -6,7 +6,11 @@ class AppColors {
   static const Color secondary = Color(0xFF15818E); // Teal
   static const Color headings = Color(0xFFEB362D); //red
   static const Color accent = Color(0xFFE35D20); // Orange
+  static const Color gradient = Color(0xFFF9AD1F);
   static const Color background = Colors.white; //white
+
+  //transparent
+  static const Color transparent = Colors.transparent;
 
   // Basic Colors
   static const Color black = Colors.black; // #000000

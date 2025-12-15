@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppSearchPage extends StatelessWidget {
-  const AppSearchPage({super.key});
+class AppChatPage extends StatelessWidget {
+  const AppChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class AppSearchPage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.search_off, size: 60, color: Colors.grey),
+                      Icon(Icons.chat_outlined, size: 60, color: Colors.grey),
                       SizedBox(height: 12),
                       Text(
-                        'No results found',
+                        'No chats yet',
                         style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
@@ -30,7 +30,7 @@ class AppSearchPage extends StatelessWidget {
                       ),
                       SizedBox(height: 4),
                       Text(
-                        'Try a different keyword',
+                        'Start a conversation to see messages here',
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
                     ],

@@ -37,7 +37,7 @@ class MyNavigationBar extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
       HomePage(),
-      AppSearchPage(),
+      AppChatPage(),
       AddPost(),
       AppFavoritePage(),
       AppSettingsPage(),
@@ -54,8 +54,8 @@ class MyNavigationBar extends StatelessWidget {
         inactiveColorPrimary: AppColors.navBarInactive,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.search),
-        title: ("search"),
+        icon: Icon(Icons.chat),
+        title: ("Chat"),
         activeColorPrimary: AppColors.navbarActive,
         inactiveColorPrimary: AppColors.navBarInactive,
       ),
