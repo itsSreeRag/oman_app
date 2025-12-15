@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
 import 'package:ui_test_app/widgets/categories_card.dart';
@@ -54,7 +55,7 @@ class HomePagePopularCategories extends StatelessWidget {
         ),
         SizedBox(
           height: 75,
-          child: ListView.builder(padding: EdgeInsets.all(0),
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: gridItems.length,
             itemBuilder: (context, index) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
+import 'package:ui_test_app/screens/home_page/widgets/filter_bottom_sheet/filter_bottom_sheet.dart';
 
 class QuickFiltersList extends StatelessWidget {
   const QuickFiltersList({super.key});
@@ -25,29 +26,41 @@ class QuickFiltersList extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = filters[index];
 
-          return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 14),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: AppColors.hintText.withAlpha(150),
-                width: 1.5,
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(item.icon, size: 18, color: AppColors.iconColorPrimary),
-                const SizedBox(width: 6),
-                Text(
-                  item.title,
-                  style: const TextStyle(
-                    color: AppColors.textDark,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w500,
-                  ),
+          return InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
                 ),
-              ],
+                builder: (context) => const FilterBottomSheet(),
+              );
+            },
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 14),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: AppColors.hintText.withAlpha(150),
+                  width: 1.5,
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(item.icon, size: 18, color: AppColors.iconColorPrimary),
+                  const SizedBox(width: 6),
+                  Text(
+                    item.title,
+                    style: const TextStyle(
+                      color: AppColors.textDark,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },

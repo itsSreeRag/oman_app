@@ -60,8 +60,9 @@ class HomePageHorizontalList extends StatelessWidget {
           ],
         ),
         // Horizontal scrolling product list
-        SizedBox(
+        Container(
           height: 202,
+          margin: EdgeInsets.only(left: 8),
           child: ListView.builder(
             itemCount: products.length,
             scrollDirection: Axis.horizontal,
