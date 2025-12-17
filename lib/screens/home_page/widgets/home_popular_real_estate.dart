@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
-import 'package:ui_test_app/screens/home_page/widgets/real_estate_card.dart';
+import 'package:ui_test_app/widgets/real_estate_card.dart';
 import 'package:ui_test_app/utils/models/realestate_card_model.dart';
 
 class RealestateModel {

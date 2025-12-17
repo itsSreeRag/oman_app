@@ -33,18 +33,34 @@ class RatingFilterSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               onTap: () => onChanged(rating),
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                margin: EdgeInsets.only(bottom: 5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
-                  color: isSelected
-                      ? AppColors.secondary
-                      : AppColors.cardBackground,
+                  gradient: isSelected
+                      ? LinearGradient(
+                          colors: [AppColors.gradient, AppColors.primary],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        )
+                      : LinearGradient(
+                          colors: [
+                            AppColors.cardBackground,
+                            AppColors.cardBackground,
+                          ],
+                        ),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(Icons.star, color: Colors.amber, size: 18),
+                    Icon(
+                      Icons.star,
+                      color: isSelected ? AppColors.white : Colors.amber,
+                      size: 18,
+                    ),
                     const SizedBox(width: 4),
                     Text(
                       '$rating & above',

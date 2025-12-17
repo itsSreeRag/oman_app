@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_test_app/constants/app_color_constants.dart';
 import 'package:ui_test_app/screens/home_page/widgets/home_page_popular_categories.dart';
-import 'package:ui_test_app/screens/home_page/widgets/quick_filter_list.dart';
 
 class CategoriesHeaderDelegate extends SliverPersistentHeaderDelegate {
   final double height;
@@ -8,15 +8,16 @@ class CategoriesHeaderDelegate extends SliverPersistentHeaderDelegate {
   CategoriesHeaderDelegate({this.height = 60});
 
   @override
-  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return Container(
-      color: Colors.white,
-      child: Column(
-        children: [
-          HomePagePopularCategories(),
-          SizedBox(height: 15),
-          QuickFiltersList()
-        ],
+      color: AppColors.white,
+      child: Container(
+        margin: const EdgeInsets.only(top: 8),
+        child: HomePagePopularCategories(),
       ),
     );
   }

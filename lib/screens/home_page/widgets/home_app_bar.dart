@@ -6,10 +6,9 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController searchController = TextEditingController();
     return SliverAppBar(
       automaticallyImplyLeading: false,
-      expandedHeight: 110.0,
+      expandedHeight: 65.0,
       floating: false,
       pinned: false,
       snap: false,
@@ -59,43 +58,43 @@ class HomeAppBar extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 15),
-              Container(
-                height: 45,
-                decoration: BoxDecoration(
-                  color: AppColors.white,
-                  border: Border.all(
-                    color: AppColors.hintText.withAlpha(100),
-                    width: 1.5,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: TextFormField(
-                  controller: searchController, // optional
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter something";
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                    hintText: 'Search for "Mobile"',
-                    hintStyle: TextStyle(
-                      color: AppColors.hintText,
-                      fontSize: 14,
-                    ),
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: AppColors.iconColorPrimary,
-                    ),
-                    suffixIcon: Icon(Icons.mic, color: AppColors.primary),
-                    border: InputBorder.none,
+              // Container(
+              //   height: 45,
+              //   decoration: BoxDecoration(
+              //     color: AppColors.white,
+              //     border: Border.all(
+              //       color: AppColors.hintText.withAlpha(100),
+              //       width: 1.5,
+              //     ),
+              //     borderRadius: BorderRadius.circular(10),
+              //   ),
+              //   child: TextFormField(
+              //     controller: searchController, // optional
+              //     validator: (value) {
+              //       if (value == null || value.isEmpty) {
+              //         return "Please enter something";
+              //       }
+              //       return null;
+              //     },
+              //     decoration: InputDecoration(
+              //       hintText: 'Search for "Mobile"',
+              //       hintStyle: TextStyle(
+              //         color: AppColors.hintText,
+              //         fontSize: 14,
+              //       ),
+              //       prefixIcon: Icon(
+              //         Icons.search,
+              //         color: AppColors.iconColorPrimary,
+              //       ),
+              //       suffixIcon: Icon(Icons.mic, color: AppColors.primary),
+              //       border: InputBorder.none,
 
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    // contentPadding: EdgeInsets.symmetric(vertical: 12),
-                  ),
-                ),
-              ),
+              //       focusedBorder: InputBorder.none,
+              //       enabledBorder: InputBorder.none,
+              //       // contentPadding: EdgeInsets.symmetric(vertical: 12),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),

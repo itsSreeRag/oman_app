@@ -58,58 +58,68 @@ class _FilterBottomSheetState extends State<FilterBottomSheet>
   Widget build(BuildContext context) {
     return FadeTransition(
       opacity: _fadeAnimation,
-      child: Container(
-        decoration: const BoxDecoration(
-          color: AppColors.background,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
-        ),
-        padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const FilterHeader(),
+      child: SafeArea(
+        child: Container(
+          padding: EdgeInsets.fromLTRB(
+            20,
+            12,
+            20,
+            10 + kBottomNavigationBarHeight, 
+          ),
+          margin: EdgeInsets.only(
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          decoration: const BoxDecoration(
+            color: AppColors.background,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const FilterHeader(),
 
-            Flexible(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    CategoryFilterSection(
-                      selectedCategories: selectedCategories,
-                      onChanged: (value) {
-                        setState(() {
-                          selectedCategories.contains(value)
-                              ? selectedCategories.remove(value)
-                              : selectedCategories.add(value);
-                        });
-                      },
-                    ),
+              Flexible(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CategoryFilterSection(
+                        selectedCategories: selectedCategories,
+                        onChanged: (value) {
+                          setState(() {
+                            selectedCategories.contains(value)
+                                ? selectedCategories.remove(value)
+                                : selectedCategories.add(value);
+                          });
+                        },
+                      ),
 
-                    const SizedBox(height: 24),
+                      const SizedBox(height: 24),
 
-                    RatingFilterSection(
-                      selectedRating: selectedRating,
-                      onChanged: (rating) {
-                        setState(() {
-                          selectedRating = selectedRating == rating
-                              ? null
-                              : rating;
-                        });
-                      },
-                    ),
-                  ],
+                      RatingFilterSection(
+                        selectedRating: selectedRating,
+                        onChanged: (rating) {
+                          setState(() {
+                            selectedRating = selectedRating == rating
+                                ? null
+                                : rating;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
 
-            const SizedBox(height: 16),
+              const SizedBox(height: 16),
 
-            FilterActionButtons(
-              hasSelection:
-                  selectedCategories.isNotEmpty || selectedRating != null,
-              onReset: resetFilters,
-              onApply: applyFilters,
-            ),
-          ],
+              FilterActionButtons(
+                hasSelection:
+                    selectedCategories.isNotEmpty || selectedRating != null,
+                onReset: resetFilters,
+                onApply: applyFilters,
+              ),
+            ],
+          ),
         ),
       ),
     );

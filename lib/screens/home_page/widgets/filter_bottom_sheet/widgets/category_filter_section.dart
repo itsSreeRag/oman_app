@@ -35,12 +35,23 @@ class CategoryFilterSection extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               onTap: () => onChanged(item.title),
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
-                  color: isSelected
-                      ? AppColors.primary
-                      : AppColors.cardBackground,
+                  gradient: isSelected
+                      ? LinearGradient(
+                          colors: [AppColors.gradient, AppColors.primary],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        )
+                      : LinearGradient(
+                          colors: [
+                            AppColors.cardBackground,
+                            AppColors.cardBackground,
+                          ],
+                        ),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(

@@ -36,7 +36,9 @@ class FilterActionButtons extends StatelessWidget {
           child: ElevatedButton(
             onPressed: onApply,
             style: ElevatedButton.styleFrom(
+              
               backgroundColor: AppColors.primary,
+              foregroundColor: AppColors.white,
               padding: const EdgeInsets.symmetric(vertical: 14),
             ),
             child: const Text('Apply Filters'),

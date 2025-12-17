@@ -3,6 +3,37 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_test_app/constants/app_color_constants.dart';
 
+
+class HomePageCarousel extends StatelessWidget {
+  const HomePageCarousel({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SliverToBoxAdapter(
+      child: Column(
+        children: [
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: double.infinity,
+              height: 130,
+              child: FadeCarousel(
+                images: const [
+                  'https://images.unsplash.com/photo-1506765515384-028b60a970df?w=1200&q=80',
+                  'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80',
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class FadeCarousel extends StatefulWidget {
   final List<String> images;
   final Duration duration;

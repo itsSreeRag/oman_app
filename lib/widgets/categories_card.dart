@@ -18,20 +18,7 @@ class CategoriesCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              // gradient: LinearGradient(
-              //   colors: [AppColors.gradient, AppColors.accent],
-              // ),
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                // BoxShadow(
-                //   color: AppColors.gradient,
-                //   blurRadius: 4,
-                //   offset: Offset(0, 2),
-                // ),
-              ],
-            ),
+          SizedBox(
             width: 50,
             height: 50,
             child: Transform.scale(

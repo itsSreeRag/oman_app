@@ -50,7 +50,7 @@ class SettingsPageItems extends StatelessWidget {
       SettingsPageItemsModel(
         title: 'Log Out',
         icon: Icons.logout_outlined,
-        navigation: AboutUs(),
+        navigation: null,
       ),
     ];
     return ListView.builder(
@@ -64,10 +64,39 @@ class SettingsPageItems extends StatelessWidget {
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
           ),
           trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey.shade400),
-          onTap: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => item.navigation),
-          ),
+          onTap: () {
+            if (item.title == 'Log Out') {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Log Out'),
+                  content: const Text('Are you sure you want to log out?'),
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text('Cancel'),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        'Log Out',
+                        style: TextStyle(color: Colors.red),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => item.navigation!),
+              );
+            }
+          },
         );
       },
       itemCount: items.length,
@@ -78,7 +107,7 @@ class SettingsPageItems extends StatelessWidget {
 class SettingsPageItemsModel {
   final String title;
   final IconData icon;
-  final Widget navigation;
+  final Widget? navigation;
 
   SettingsPageItemsModel({
     required this.title,
