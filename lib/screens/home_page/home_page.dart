@@ -27,27 +27,22 @@ class HomePage extends StatelessWidget {
             HomeCategoriesList(),
 
             /// 👇 IMPORTANT FIX
-            SliverPadding(
-              padding: const EdgeInsets.only(
-                bottom: kBottomNavigationBarHeight + 10,
-              ),
-              sliver: SliverToBoxAdapter(
-                child: Column(
-                  children: [
-                    SizedBox(height: 15),
-                    QuickFiltersList(),
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  SizedBox(height: 15),
+                  QuickFiltersList(),
 
-                    HomePageHorizontalList(
-                      title: 'Popular in Fashion',
-                      products: popularProducts,
-                    ),
-                    HomePageHorizontalList(
-                      title: 'Popular in Electronics',
-                      products: popularProducts,
-                    ),
-                    HomePagePopularInRealestate(),
-                  ],
-                ),
+                  HomePageHorizontalList(
+                    title: 'Popular in Fashion',
+                    products: popularProducts,
+                  ),
+                  HomePageHorizontalList(
+                    title: 'Popular in Electronics',
+                    products: popularProducts,
+                  ),
+                  HomePagePopularInRealestate(),
+                ],
               ),
             ),
           ],
@@ -57,11 +52,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-

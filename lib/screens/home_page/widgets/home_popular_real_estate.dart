@@ -49,7 +49,6 @@ class HomePagePopularInRealestate extends StatelessWidget {
                 bed: "6",
                 bath: "6",
                 imageUrl: "assets/product1.jpg",
-
               );
             },
           ),
@@ -58,4 +57,3 @@ class HomePagePopularInRealestate extends StatelessWidget {
     );
   }
 }
-
