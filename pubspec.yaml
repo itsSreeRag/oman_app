@@ -38,6 +38,8 @@ dependencies:
   zoom_sliver_app_bar: ^0.0.3
   cached_network_image: ^3.4.1
   animated_bottom_navigation_bar: ^1.4.0
+  readmore: ^3.0.0
+  carousel_slider: ^5.1.1
 
 dev_dependencies:
   flutter_test:
